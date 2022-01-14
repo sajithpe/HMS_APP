@@ -1,0 +1,57 @@
+table.mat-table {
+    width: 100%;
+    border-color: darkslategrey;
+    border-radius: 8px;
+    overflow:hidden !important;
+    border-spacing: 0 8px !important;
+    
+    
+  }
+ 
+  .mat-header-row{
+      background-color: rgb(3, 77, 77);
+          
+  }
+
+
+th.mat-header-cell {
+
+    font-weight: bold;
+    font-size: 16px;
+    color: darkgray;
+    border-left: darkgray;
+    border-right: 2px;
+    text-align: center;
+ 
+ }
+
+
+tr.mat-row:hover{
+    background-color: lightgray;    
+}
+
+input[name="searchKey"] {
+    border-radius: 5px;
+    border-color: darkgray;
+  }
+
+    th.mat-header-vasName{
+        text-align: center;
+    }
+    .mat-column-vasName{
+        padding-left: 4px;
+        border-right: 1px solid rgb(193, 199, 201);
+                    
+    }
+
+    .mat-column-vasValue{
+        padding-left: 4px;
+        border-right: 1px solid rgb(193, 199, 201);
+    
+    }
+
+   
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }

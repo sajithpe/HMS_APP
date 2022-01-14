@@ -1,0 +1,95 @@
+<div class="fs-4 text-center">{{dialogTitle}}</div>
+
+<div class="container-fluid mt-5 border p-3 col-11">
+
+    <form role="form" #inqForm="ngForm" (submit)="formSubmit(inqForm)" novalidate>
+
+        <input type="hidden" name="inqId" [value]="service.inqFormData.inqId" />
+
+        <div class="form-group row mb-2">
+            <label class="col-sm-3 col-form-label fs-6 fw-bold">CUSTOMER CONTACT:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control fs-6 " name="custContact" id="custContact"
+                required [disabled]='idInitial' #custContact value="{{v}}">
+
+                <input type="hidden" class="form-control fs-6 " #customerCustId="ngModel" name="customerCustId"
+                [(ngModel)]="service.inqFormData.customerCustId">
+
+            </div>
+            <div class="col-sm-1">
+                <button *ngIf="isShown" type="button" class="btn btn-m btn-outline-primary"
+                    (click)="validateId(custContact.value, inqForm)">
+                    Validate
+                </button>
+            </div>
+
+        </div>
+      
+
+
+<div class="form-group row mb-2">
+    <label class="col-sm-3 col-form-label fs-6 fw-bold">HOTEL NAME:</label>
+    <div class="col-sm-3">
+        <select class="form-select form-select-sm" #hotelName="ngModel" name="hotelId"
+            [(ngModel)]="service.inqFormData.hotelId" required [disabled]='idValid'>
+            <option selected></option>
+            <option *ngFor="let hN of hList" [value]="hN.hotelId">
+                {{hN.hotelName}}
+            </option>
+        </select>
+    </div>
+</div>
+
+    <div class="form-group row mb-2">
+        <label class="col-sm-3 col-form-label fs-6 fw-bold">DESCRIPTION:</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control fs-6 " #inqDescrip="ngModel" name="inqDescrip"
+                [(ngModel)]="service.inqFormData.inqDescrip" required [disabled]='idValid'>
+        </div>
+    </div>
+
+    <div class="form-group row mb-2">
+        <label class="col-sm-3 col-form-label fs-6 fw-bold">ROOM TYPE:</label>
+        <div class="col-sm-5">
+            <select class="form-select form-select-sm" #inqRoomType="ngModel" name="inqRoomType"
+                [(ngModel)]="service.inqFormData.inqRoomType" required [disabled]='idValid'>
+                <option selected></option>
+                <option value="S">Single</option>
+                <option value="D">Double</option>
+                <option value="T">Triple</option>
+                <option value="A">Apartment</option>
+                <option value="C">Cabana</option>
+                <option value="V">Villa</option>
+                <option value="C">Cabana</option>
+                <option value="E">Executive Suite</option>
+                <option value="P">Presidental Suite</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group row mb-2">
+        <label class="col-sm-3 col-form-label fs-6 fw-bold">STATUS:</label>
+        <div class="col-sm-3">
+            <select class="form-select form-select-sm" #inqStatus="ngModel" name="inqStatus"
+                [(ngModel)]="service.inqFormData.inqStatus" [disabled]='idValid'>
+                <option selected></option>
+                <option value="A">Active</option>
+                <option value="I">In-Active</option>
+                <option value="T">Transferred</option>
+                <option value="T">Booked</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="form-group mb-3 text-right col-sm-7">
+            <button class="btn btn-success btn-sm m-3" type="submit" [disabled]="inqForm.form.invalid">
+                SUBMIT</button>
+            <button class="btn btn-warning btn-sm" type="reset" (click)="formClose(inqForm)"> CANCEL</button>
+        </div>
+    </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,77 @@
+<form>
+    <div class="row pl-4">
+        <div class="col-8 pt-2 ">
+            <div class="input-group">
+                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRoom" name="searchKey"
+                    placeholder="Search..." autocomplete="off" (keyup)="filterRoom()">
+                <button type="button" class="btn bg-transparent" style="margin-left: -40px; z-index: 100;"
+                    *ngIf="searchRoom" (click)="clearSearch()">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-secondary btn-sm mb-2" (click)="addNewRoom()">ADD NEW</button>
+        </div>
+
+    </div>
+</form>
+
+
+<div class="container-flex">
+    <table mat-table matSort [dataSource]="roomList" class="mat-elevation-z8">
+        <ng-container matColumnDef="hotelName">
+            <th mat-header-cell *matHeaderCellDef class="" mat-sort-header> Hotel Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.hotel.hotelName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="roomName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Room</th>
+            <td mat-cell *matCellDef="let element"> {{element.roomName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="roomDescrip">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Description</th>
+            <td mat-cell *matCellDef="let element"> {{element.roomDescrip}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="roomType">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Room Type </th>
+            <td mat-cell *matCellDef="let element" [ngSwitch]=element.roomType>
+                <p *ngSwitchCase="'S'">Single</p>
+                <p *ngSwitchCase="'D'">Double</p>
+                <p *ngSwitchCase="'T'">Triple</p>
+                <p *ngSwitchCase="'A'">Apartment</p>
+                <p *ngSwitchCase="'C'">Cabana</p>
+                <p *ngSwitchCase="'V'">Villa</p>
+                <p *ngSwitchCase="'C'">Cabana</p>
+                <p *ngSwitchCase="'E'">Executive Suite</p>
+                <p *ngSwitchCase="'P'">Presidental Suite</p>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="roomPrice">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Room Price</th>
+            <td mat-cell *matCellDef="let element"> {{element.roomPrice}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let row" class="flex-stretch">
+                <button (click)="editRoom(row)" class=" btn text-warning mt-1 mx-1 fs-6">
+                    <mat-icon>launch</mat-icon>
+                </button>
+                <button (click)="deleteRoom(row)" class=" btn text-danger mt-1 mx-1 fs-6">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+    </table>
+
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator>
+
+</div>

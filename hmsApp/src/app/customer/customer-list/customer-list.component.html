@@ -1,0 +1,61 @@
+<form>
+    <div class="row pl-4">
+        <div class="col-8 pt-2 ">
+            <div class="input-group">
+                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchKey" name="searchKey"
+                    placeholder="Search..." autocomplete="off" (keyup)="filterList()">
+                <button type="button" class="btn bg-transparent" style="margin-left: -40px; z-index: 100;"
+                    *ngIf="searchKey" (click)="clearSearch()">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-2"></div>
+        <!-- <div class="col-2">
+            <button type="submit" class="btn btn-secondary btn-sm mb-2" (click)="addNew()">ADD NEW</button>
+        </div> -->
+
+    </div>
+</form>
+
+
+<div class="container-flex mt-3">
+    <table mat-table matSort [dataSource]="customerList" class="mat-elevation-z8">
+        <ng-container matColumnDef="custId">
+            <th mat-header-cell *matHeaderCellDef class="" mat-sort-header> Customer Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.custId}} </td>
+        </ng-container>
+        <ng-container matColumnDef="custName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.custName1}} {{element.custName2}}</td>
+        </ng-container>
+        <ng-container matColumnDef="custContact">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact No.</th>
+            <td mat-cell *matCellDef="let element"> 0{{element.custContact}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="custDeleteStat">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Status </th>
+            <td mat-cell *matCellDef="let element" [ngSwitch]=element.custDeleteStat>
+                <p *ngSwitchCase="'A'">Active</p>
+                <p *ngSwitchCase="'I'">In Active</p>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let row" class="flex-stretch">
+                <button (click)="editRow(row)" class=" btn text-warning mt-1 mx-1 fs-6">
+                    <mat-icon>launch</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+    </table>
+
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator>
+
+</div>

@@ -1,0 +1,64 @@
+<form>
+    <div class="row pl-4">
+        <div class="col-8 pt-2 ">
+            <div class="input-group">
+                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchDept" name="searchKey"
+                    placeholder="Search..." autocomplete="off" (keyup)="filterDept()">
+                <button type="button" class="btn bg-transparent" style="margin-left: -40px; z-index: 100;"
+                    *ngIf="searchDept" (click)="clearSearch()">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-secondary btn-sm mb-2" (click)="addNewDept()">ADD NEW</button>
+        </div>
+
+    </div>
+</form>
+
+
+<div class="container-flex">
+    <table mat-table matSort [dataSource]="deptList" class="mat-elevation-z8">
+        <ng-container matColumnDef="hotelName">
+            <th mat-header-cell *matHeaderCellDef class="" mat-sort-header> Hotel Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.hotel.hotelName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="deptName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Department</th>
+            <td mat-cell *matCellDef="let element"> {{element.deptName}} </td>
+        </ng-container>
+        <!-- <ng-container matColumnDef="address1">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Address</th>
+        <td mat-cell *matCellDef="let element"> {{element.address1}} </td>
+      </ng-container> -->
+
+        <ng-container matColumnDef="deptStatus">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Deleted </th>
+            <td mat-cell *matCellDef="let element" [ngSwitch]=element.deptStatus>
+                <p *ngSwitchCase="'N'">NO</p>
+                <p *ngSwitchCase="'Y'">YES</p>
+                
+            </td>
+
+
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let row" (click)="editDept(row)" class="flex-stretch">
+                <button class=" btn text-warning mt-1 mx-1 fs-6">
+                    <mat-icon>launch</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+    </table>
+
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator>
+
+</div>

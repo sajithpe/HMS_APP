@@ -1,0 +1,65 @@
+<div class="fs-4 text-center">{{dialogTitle}}</div>
+
+<div class="container-fluid mt-5 border p-3 col-11">
+
+    <form role="form" #iForm="ngForm" (submit)="formSubmit(iForm)" novalidate>
+
+        <input type="hidden" name="custId" [value]="service.iFormData.liqExId" />
+        <input type="hidden" class="form-control fs-6 " #enteredOn="ngModel" name="enteredOn"
+                    [(ngModel)]="service.iFormData.enteredOn">
+
+        
+
+                <div class="form-group row mb-2">
+                <label class="col-sm-3 col-form-label fs-6 fw-bold">HOTEL NAME:</label>
+                <div class="col-sm-3">
+                    <select class="form-select form-select-sm" #hotelName="ngModel" name="hotelId"
+                        [(ngModel)]="service.iFormData.hotelId" required>
+                        <option selected></option>
+                        <option *ngFor="let hN of hList" [value]="hN.hotelId">
+                            {{hN.hotelName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            
+        
+            <div class="form-group row mb-2">
+                <label class="col-sm-3 col-form-label fs-6 fw-bold">EXPENSE:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control fs-6" #liqExDes="ngModel" name="liqExDes"
+                        [(ngModel)]="service.iFormData.liqExDes" required maxlength="20" minlength="5">
+                </div>
+                
+            </div>
+
+        <div class="form-group row mb-2">
+            <label class="col-sm-3 col-form-label fs-6 fw-bold">EXPENSE VALUE:</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control fs-6 " #liqExValue="ngModel" name="liqExValue"
+                    [(ngModel)]="service.iFormData.liqExValue" required>
+            </div>
+        </div>
+
+       
+        <!-- <div class="form-group row mb-2">
+            <label class="col-sm-3 col-form-label fs-6 fw-bold">STATUS:</label>
+            <div class="col-sm-3">
+                <select class="form-select form-select-sm" #custDeleteStatus="ngModel" name="custDeleteStat"
+                    [(ngModel)]="service.iFormData.custDeleteStat" [disabled]='idValid'>
+                    <option selected></option>
+                    <option value="A">Active</option>
+                    <option value="I">In-Active</option>
+                </select>
+            </div>
+        </div> -->
+
+        <div class="row justify-content-end">
+            <div class="form-group mb-3 text-right col-sm-7">
+                <button class="btn btn-success btn-sm m-3" type="submit" [disabled]="iForm.form.invalid">
+                    SUBMIT</button>
+                <button class="btn btn-warning btn-sm" type="reset" (click)="formClose(iForm)"> CANCEL</button>
+            </div>
+        </div>
+    </form>
+</div>

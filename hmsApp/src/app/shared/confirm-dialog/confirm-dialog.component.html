@@ -1,0 +1,11 @@
+<h2 mat-dialog-title class="modal-title">{{data.title}}</h2>
+
+<mat-dialog-content class="mat-typography">
+    <h3>{{data.message}}</h3>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button type="button" class="btn btn-outline-secondary mx-3" (click)="onDismiss()"> Cancel</button>
+    <button type="button" class="btn btn-outline-primary" (click)="onConfirm()"> Proceed </button>
+
+</mat-dialog-actions>

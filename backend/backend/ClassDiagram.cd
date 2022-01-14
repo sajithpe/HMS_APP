@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="backend.Controllers.AttendancesController">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAQABAAAAAAAABAAAAAEAIAIAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AttendancesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.CustInquiriesController">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAABABACAAAAAACAAAAAACAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Controllers\CustInquiriesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.CustomersController">
+    <Position X="3.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAABAAAAABAAAAAAACAAAAAAAADAAA=</HashCode>
+      <FileName>Controllers\CustomersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.DepartmentsController">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAABQAAACAAAAAAAAIAAAAAAAAAIAAAAAE=</HashCode>
+      <FileName>Controllers\DepartmentsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.EmpCatsController">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAIAABAgAAQAAAAJAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\EmpCatsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.EmployeesController">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAIAhAAAAAAAAAAAECAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\EmployeesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.ExpensesController">
+    <Position X="11.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAARAAAAQAAAAAIAAAAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>Controllers\ExpensesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.HotelsController">
+    <Position X="17.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAEEAAAAAAABABAAgAA=</HashCode>
+      <FileName>Controllers\HotelsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.LiqStoreExpensesController">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAABhAAAAAAASAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Controllers\LiqStoreExpensesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.LiqStoreIncomesController">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEFAABAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Controllers\LiqStoreIncomesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.LiquorsController">
+    <Position X="9" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAABAAAAACAAAAAAIBAAAAEAAAAAgAAAAA=</HashCode>
+      <FileName>Controllers\LiquorsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.PaymentsController">
+    <Position X="15" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAQAgAAAAABAAAAAAAAAMAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PaymentsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.ReservationsController">
+    <Position X="15.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABEAAQAAAABAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Controllers\ReservationsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.ReservationVASController">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAkAAAAQAAABAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ReservationVASController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.RolesController">
+    <Position X="11" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAEQAAAABAAAAAAAwAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Controllers\RolesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.RoomsController">
+    <Position X="11.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABEAAABIAAAACAAAAAAAAAAAAAAAAACAAAAEA=</HashCode>
+      <FileName>Controllers\RoomsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.SalariesController">
+    <Position X="13.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAQAIABAAAAAAiAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Controllers\SalariesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.UserRolesController">
+    <Position X="14.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAgABQAACAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserRolesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.UsersController">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAAAAAAAABQAEAAAAAAAAAAAAAAAAMAAAABAAAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="backend.Controllers.VASController">
+    <Position X="6.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgAAAABAACABAAAAAAAEAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Controllers\VASController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Mvc.ControllerBase" Collapsed="true">
+    <Position X="9.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

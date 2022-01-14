@@ -1,0 +1,54 @@
+<form>
+    <div class="row pl-4">
+        <div class="col-8 pt-2 ">
+            <div class="input-group">
+                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchVas" name="searchKey"
+                    placeholder="Search..." autocomplete="off" (keyup)="filterVas()">
+                <button type="button" class="btn bg-transparent" style="margin-left: -40px; z-index: 100;"
+                    *ngIf="searchVas" (click)="clearSearch()">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-secondary btn-sm mb-2" (click)="addNewVas()">ADD NEW</button>
+        </div>
+
+    </div>
+</form>
+
+
+<div class="container-flex">
+    <table mat-table matSort [dataSource]="vasList" class="mat-elevation-z8">
+        <ng-container matColumnDef="vasName">
+            <th mat-header-cell *matHeaderCellDef class="" mat-sort-header> Service Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.vasName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="vasValue">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price</th>
+            <td mat-cell *matCellDef="let element"> {{element.vasValue}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let row" class="flex-stretch">
+                <button (click)="editVas(row)" class=" btn text-warning mt-1 mx-1 fs-6">
+                    <mat-icon>launch</mat-icon>
+                </button>
+                <button (click)="deleteVas(row)" class=" btn text-danger mt-1 mx-1 fs-6">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+    </table>
+
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator>
+
+</div>

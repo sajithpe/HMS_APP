@@ -1,0 +1,38 @@
+<div class="fs-4 text-center">{{dialogTitle}}</div>
+
+<div class="container-fluid mt-5 border p-3 col-11">
+
+    <form novalidate #userForm="ngForm" (submit)="formSubmit(userForm)">
+
+        <input type="hidden" name="userId" [value]="service.uFormData.userId" />
+
+        <div class="form-group row mb-2">
+            <label class="col-sm-3 col-form-label fs-6 fw-bold">ROLE NAME:</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control fs-6 " #empId="ngModel" name="empId"
+                    [(ngModel)]="service.uFormData.empId" required maxlength="20" minlength="1" [disabled]='empInitial'>
+            </div>
+                        
+        </div>
+        
+        <div class="form-group row mb-2">
+            <label class="col-sm-3 col-form-label fs-6 fw-bold">ROLE STATUS:</label>
+            <div class="col-sm-3">
+                <select class="form-select form-select-sm" userStat="ngModel" name="userStat"
+                    [(ngModel)]="service.uFormData.userStat" [disabled]='empValid'>
+                    <option selected></option>
+                    <option value="A">Active</option>
+                    <option value="I">In-Active</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row justify-content-end">
+            <div class="form-group mb-3 text-right col-sm-7">
+                <button class="btn btn-success btn-sm m-3" type="submit" [disabled]="userForm.invalid">
+                    SUBMIT</button>
+                <button class="btn btn-warning btn-sm" type="reset" (click)="formClose()"> CANCEL</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  form.label{
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* You can add global styles to this file, and also import other style files */
+
+.form-group label{
+  color: grey;
+}
+
+.form-group input{
+  font-weight: 500;
+}
+
+.form-group input::placeholder{
+  color: #c0bdbd;
+  font-weight: 300;
+}
+
+tr.mat-row {
+  border: 1 px solid #e7e7e7;
+  
+  max-height: 1px!important;
+  min-height: 1px!important;
+}

@@ -1,0 +1,127 @@
+<div class="fs-4 text-center">{{dialogTitle}}</div>
+
+<div class="container-fluid">
+
+    <form role="form" #iForm="ngForm" (submit)="formSubmit(iForm)" novalidate>
+
+        <div style="border-color: darkred; border-radius: 2px; border-bottom: darkred; border-width: 4px;">
+        <div class="row">
+            <input type="hidden" name="resId" [value]="service.iFormData.resId" />
+    
+            <div class="form-group col-md-4">
+                <label class="form-label fs-6 fw-bold">INQUIRY ID:</label>
+    
+                <input type="text" class="form-control form-control-sm fs-6 " name="inqId" id="inqId" required [disabled]='idInitial' #resid
+                    value="{{v}}">
+    
+            </div>
+            <div class="form-group col-md-4">
+    
+                <label class="form-label fs-6 fw-bold">HOTEL:</label>
+    
+                <select class="form-control form-control-sm fs-6" #hotelName="ngModel" name="hotelId"
+                    [(ngModel)]="service.iFormData.hotelId" required>
+                    <option selected></option>
+                    <option *ngFor="let hN of hList" [value]="hN.hotelId">
+                        {{hN.hotelName}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label class="form-label fs-6 fw-bold">FROM DATE:</label>
+    
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <input class="form-input fs-6 " matInput [matDatepicker]="picker" #resCheckIn="ngModel" name="resCheckIn"
+                    [(ngModel)]="service.iFormData.resCheckIn">
+    
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="form-label fs-6 fw-bold">TO DATE:</label>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+                <input class="form-input fs-6 " matInput [matDatepicker]="picker2" #resCheckOut="ngModel"
+                    name="resCheckOut" [(ngModel)]="service.iFormData.resCheckOut">
+            </div>
+        </div>
+        
+        </div>
+    <div class="row mt-3">
+        <div class="form-group col-md-4">
+            <button type="button" class=" btn form-btn btn-m btn-outline-primary"
+                (click)="validateId(resCheckIn.value, resCheckOut.value, hotelName.value, iForm)">
+                Get Rooms
+            </button>
+        </div>
+    </div>
+    
+        <div class="row mb-2">
+         
+            <div class="form-group col-md-4">
+                <label class="form-label fs-6 fw-bold">ROOM NAME:</label>
+    
+                <select class="form-control form-select form-select-sm" #roomName="ngModel" name="roomId"
+                    [(ngModel)]="service.iFormData.roomId" required [disabled]='idValid'
+                    (ngModelChange)="onSelectChange(roomName.value, rList, iForm)">
+                    <option selected></option>
+                    <option *ngFor="let rN of rList" [value]="rN.roomId">
+                        {{rN.roomName}}
+                    </option>
+                </select>
+            </div>
+    
+            <div class="form-group col-md-4">
+                <label class="form-label fs-6 fw-bold">PRICE:</label>
+    
+                <input type="text" class="form-control form-select-sm fs-6 " name="resPrice" id="resPrice" required
+                    [disabled]='idInitial' #resPrice="ngModel" [(ngModel)]="service.iFormData.resPrice">
+    
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group mb-2 col-md-4">
+    
+                <label class="form-label fs-6 fw-bold">NO OF ADULTS:</label>
+    
+                <input type="text" class="form-control form-select-sm fs-6 " name="resAdults" id="resAdults" required
+                    [disabled]='idValid' #resAdults="ngModel" [(ngModel)]="service.iFormData.resAdults">
+    
+            </div>
+    
+            <div class="form-group col-md-4">
+    
+            <label class="form-label fs-6 fw-bold">NO OF KIDS:</label>
+    
+            <input type="text" class="form-control form-select-sm fs-6 " name="resKids" id="resKids" required
+                [disabled]='idValid' #resKids="ngModel" [(ngModel)]="service.iFormData.resKids">
+    
+            </div>
+    
+    
+        </div>
+    
+        <div class="form-group col-md-3">
+            <label class="form-label fs-6 fw-bold">STATUS:</label>
+            <select class="form-select form-select-sm" #resStatus="ngModel" name="resStatus"
+            [(ngModel)]="service.iFormData.resStatus" [disabled]='idValid'>
+            <option selected></option>
+            <option value="A">Active</option>
+            <option value="I">Checked In</option>
+            <option value="C">Canceled</option>
+            <option value="O">Checked Out</option>
+        </select> 
+                            
+        </div>
+        <div class="row justify-content-end">
+            <div class="form-group mb-3 text-right col-sm-7">
+                <button class="btn btn-success btn-sm m-3" type="submit" [disabled]="iForm.form.invalid">
+                    SUBMIT</button>
+                <button class="btn btn-warning btn-sm" type="reset" (click)="formClose(iForm)"> CANCEL</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
