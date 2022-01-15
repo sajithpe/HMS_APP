@@ -4,7 +4,6 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
-import{NgChartsModule} from 'ng2-charts';
 
 
 
@@ -84,8 +83,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ExpenseListComponent } from './bar/expense-list/expense-list.component';
-import { BarChartComponent } from './reports/bar-chart/bar-chart.component';
+import{ChartsModule} from 'ng2-charts'
+import {BarChartComponent} from './reports/bar-chart/bar-chart.component';
 import { PieChartComponent } from './reports/pie-chart/pie-chart.component';
+import { LineChartComponent } from './reports/line-chart/line-chart.component';
 
 
 
@@ -149,7 +150,8 @@ import { PieChartComponent } from './reports/pie-chart/pie-chart.component';
     LoginComponent,
     ExpenseListComponent,
     BarChartComponent,
-    PieChartComponent
+    PieChartComponent,
+    LineChartComponent
        
     
    
@@ -181,7 +183,7 @@ import { PieChartComponent } from './reports/pie-chart/pie-chart.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    NgChartsModule
+    ChartsModule
 
     
   ],
